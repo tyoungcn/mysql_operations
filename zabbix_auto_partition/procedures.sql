@@ -177,7 +177,7 @@ BEGIN
     
     -- 如果没有指定执行添加、删除分区的年月，则默认为当前年月
     IF i_current_year_month IS NULL OR i_current_year_month = '' THEN
-        SET i_current_year_month = CONCAT(YEAR(CURRENT_DATE()), MONTH(CURRENT_DATE()));
+        SET i_current_year_month = DATE_FORMAT(CURRENT_DATE(), '%Y%m');
     END IF;
     
     SET @current_part_name = CONCAT('p', i_current_year_month);

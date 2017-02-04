@@ -21,7 +21,7 @@ BEGIN
     DECLARE v_current_year_month VARCHAR(10);
     DECLARE v_next_year_month VARCHAR(10);
     
-    SET v_current_year_month = CONCAT(YEAR(CURRENT_DATE()), MONTH(CURRENT_DATE()));
+    SET v_current_year_month = DATE_FORMAT(CURRENT_DATE(), '%Y%m');
     SET v_next_year_month = PERIOD_ADD(v_current_year_month, 1);
     
     CALL prc_partition_maintenance(v_next_year_month);
