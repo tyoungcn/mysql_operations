@@ -15,7 +15,7 @@ CREATE TABLE `history` (
   `value` double(16,4) NOT NULL DEFAULT '0.0000',
   `ns` int(11) NOT NULL DEFAULT '0',
   KEY `history_1` (`itemid`,`clock`)
-) ENGINE=TokuDB DEFAULT CHARSET=utf8 `compression`='tokudb_zlib'
+) ENGINE=TokuDB DEFAULT CHARSET=utf8
 /*!50100 PARTITION BY RANGE (clock)
 (PARTITION p201610 VALUES LESS THAN (1477929600) ENGINE = TokuDB,
  PARTITION p201611 VALUES LESS THAN (1480521600) ENGINE = TokuDB,
@@ -37,7 +37,7 @@ CREATE TABLE `history_log` (
   KEY `id` (`id`),
   KEY `history_log_2` (`itemid`,`id`),
   KEY `history_log_1` (`itemid`,`clock`)
-) ENGINE=TokuDB DEFAULT CHARSET=utf8 `compression`='tokudb_zlib'
+) ENGINE=TokuDB DEFAULT CHARSET=utf8
 /*!50100 PARTITION BY RANGE (clock)
 (PARTITION p201610 VALUES LESS THAN (1477929600) ENGINE = TokuDB,
  PARTITION p201611 VALUES LESS THAN (1480521600) ENGINE = TokuDB,
@@ -52,7 +52,7 @@ CREATE TABLE `history_str` (
   `value` varchar(255) NOT NULL DEFAULT '',
   `ns` int(11) NOT NULL DEFAULT '0',
   KEY `history_str_1` (`itemid`,`clock`)
-) ENGINE=TokuDB DEFAULT CHARSET=utf8 `compression`='tokudb_zlib'
+) ENGINE=TokuDB DEFAULT CHARSET=utf8
 /*!50100 PARTITION BY RANGE (clock)
 (PARTITION p201610 VALUES LESS THAN (1477929600) ENGINE = TokuDB,
  PARTITION p201611 VALUES LESS THAN (1480521600) ENGINE = TokuDB,
@@ -70,7 +70,7 @@ CREATE TABLE `history_text` (
   KEY `id` (`id`),
   KEY `history_text_2` (`itemid`,`id`),
   KEY `history_text_1` (`itemid`,`clock`)
-) ENGINE=TokuDB DEFAULT CHARSET=utf8 `compression`='tokudb_zlib'
+) ENGINE=TokuDB DEFAULT CHARSET=utf8
 /*!50100 PARTITION BY RANGE (clock)
 (PARTITION p201610 VALUES LESS THAN (1477929600) ENGINE = TokuDB,
  PARTITION p201611 VALUES LESS THAN (1480521600) ENGINE = TokuDB,
@@ -85,7 +85,7 @@ CREATE TABLE `history_uint` (
   `value` bigint(20) unsigned NOT NULL DEFAULT '0',
   `ns` int(11) NOT NULL DEFAULT '0',
   KEY `history_uint_1` (`itemid`,`clock`)
-) ENGINE=TokuDB DEFAULT CHARSET=utf8 `compression`='tokudb_zlib'
+) ENGINE=TokuDB DEFAULT CHARSET=utf8
 /*!50100 PARTITION BY RANGE (clock)
 (PARTITION p201610 VALUES LESS THAN (1477929600) ENGINE = TokuDB,
  PARTITION p201611 VALUES LESS THAN (1480521600) ENGINE = TokuDB,
@@ -102,7 +102,7 @@ CREATE TABLE `trends` (
   `value_avg` double(16,4) NOT NULL DEFAULT '0.0000',
   `value_max` double(16,4) NOT NULL DEFAULT '0.0000',
   PRIMARY KEY (`itemid`,`clock`)
-) ENGINE=TokuDB DEFAULT CHARSET=utf8 `compression`='tokudb_zlib'
+) ENGINE=TokuDB DEFAULT CHARSET=utf8
 /*!50100 PARTITION BY RANGE (clock)
 (PARTITION p201610 VALUES LESS THAN (1477929600) ENGINE = TokuDB,
  PARTITION p201611 VALUES LESS THAN (1480521600) ENGINE = TokuDB,
@@ -119,7 +119,7 @@ CREATE TABLE `trends_uint` (
   `value_avg` bigint(20) unsigned NOT NULL DEFAULT '0',
   `value_max` bigint(20) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`itemid`,`clock`)
-) ENGINE=TokuDB DEFAULT CHARSET=utf8 `compression`='tokudb_zlib'
+) ENGINE=TokuDB DEFAULT CHARSET=utf8
 /*!50100 PARTITION BY RANGE (clock)
 (PARTITION p201610 VALUES LESS THAN (1477929600) ENGINE = TokuDB,
  PARTITION p201611 VALUES LESS THAN (1480521600) ENGINE = TokuDB,
